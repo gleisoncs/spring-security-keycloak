@@ -17,7 +17,7 @@
  *
  */
 
-package com.baeldung.cognito;
+package com.ailos.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ResolvableType;

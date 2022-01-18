@@ -1,4 +1,4 @@
-package com.baeldung.cognito;
+package com.ailos.demo;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;

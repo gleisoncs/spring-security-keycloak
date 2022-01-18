@@ -1,4 +1,4 @@
-package com.baeldung.cognito;
+package com.ailos.demo;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
