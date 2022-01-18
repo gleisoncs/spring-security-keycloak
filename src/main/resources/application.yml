@@ -17,18 +17,16 @@ spring:
             logout-uri: https://myapp2.auth.sa-east-1.amazoncognito.com/logout
             client-name: AWS Cognito
           keycloak:
-            realm: demo
-            resource: app1
-            auth-server-url: http://localhost:8080/auth/realms/demo/protocol/openid-connect/token
-            ssl-required: false
-            public-client: true
-            client-name: Keycloak
             client-id: app1
+            client-secret: eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJmYzQxNWM5OC05N2UxLTRlMTQtYTdjMi1iYTU2Zjg3NmRjNmMifQ.eyJleHAiOjAsImlhdCI6MTY0MjUyNTExNCwianRpIjoiMGExNmE5NTQtNjlkMC00NjY1LWI2MDItMDkxYWU4ZDJkOGQ0IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL2RlbW8iLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvZGVtbyIsInR5cCI6IkluaXRpYWxBY2Nlc3NUb2tlbiJ9.hLFFMdRU58TIsC-UU1klB9jCs-n3DqsoN25Hxo6aRAY
+            scope: openid
             redirect-uri: http://localhost:8081/login/oauth2/code/keycloak
+            logout-uri: http://localhost:8080/logout
+            client-name: Keycloak
+            realm: demo
         provider:
           cognito:
             issuerUri: https://cognito-idp.sa-east-1.amazonaws.com/sa-east-1_GffHQAnV2
             user-name-attribute: cognito:username
           keycloak:
             issuerUri: http://localhost:8080/auth/realms/demo
-            user-name-attribute: username
