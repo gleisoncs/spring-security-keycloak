@@ -1,0 +1,34 @@
+server:
+  port: 8081
+
+client:
+  post-logout-uri: http://localhost:8081/
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          cognito:
+            client-id: 387gfsc736qi7bnlb84hjdmqln
+            client-secret: qbj4dmmfp7vmevedhr35j8lh8rab1rt10u9kags0bjadb4o76e7
+            scope: openid
+            redirect-uri: http://localhost:8081/login/oauth2/code/cognito
+            logout-uri: https://myapp2.auth.us-east-1.amazoncognito.com/logout
+            client-name: AWS Cognito
+          keycloak:
+            realm: demo
+            resource: app1
+            auth-server-url: http://localhost:8080/auth/realms/demo/protocol/openid-connect/token
+            ssl-required: false
+            public-client: true
+            client-name: Keycloak
+            client-id: app1
+            redirect-uri: http://localhost:8081/login/oauth2/code/keycloak
+        provider:
+          cognito:
+            issuerUri: https://cognito-idp.us-east-1.amazonaws.com/sa-east-1_GfgHQAnV2
+            user-name-attribute: cognito:username
+          keycloak:
+            issuerUri: http://localhost:8080/auth/realms/demo
+            user-name-attribute: username
